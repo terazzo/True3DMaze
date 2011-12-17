@@ -66,7 +66,6 @@ static BOOL hasInitialized = NO;
 }
 - (void)moveForward
 {
-    NSLog(@"moveForward");
     self.transform =
     CATransform3DConcat(self.transform, CATransform3DMakeTranslation(0.0f, 0.0f, PIECE_SIZE));
 }
