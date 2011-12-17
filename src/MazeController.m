@@ -102,7 +102,7 @@
 - (void)moveForwardOrStay
 {
     MazePosition position = [viewPoint getForwardPosition];
-    if ([maze hasWallAt:position for:DIR_NONE] || setting.cheat == NSOnState) {
+    if ([maze hasWallAt:position for:DIR_NONE] || setting.throughWalls == NSOnState) {
         [viewPoint moveForward];
     }
     [self notifyViewPointChanged:viewPoint.transform];
@@ -115,6 +115,11 @@
 
 - (void)rotateViewPoint:(CGFloat)angleX :(CGFloat)angleY
 {
+    // 90度単位で丸める
+    if (setting.freeRotation != NSOnState) {
+        angleX = M_PI * floor(angleX * 2 / M_PI + 0.5f) / 2;
+        angleY = M_PI * floor(angleY * 2 / M_PI + 0.5f) / 2;
+    }
     CATransform3D transform = viewPoint.transform;
     transform = CATransform3DConcat(transform, 
                                     CATransform3DMakeRotation(angleX, 0.0f, -1.0f, 0.0f));

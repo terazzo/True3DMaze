@@ -58,7 +58,7 @@
 - (void)updateTransform:(CATransform3D)viewPointTransform;
 {
     self.transform =
-    CATransform3DConcat(originalTransform, viewPointTransform);
+        CATransform3DConcat(originalTransform, viewPointTransform);
     
     if (self.transform.m43 > PIECE_SIZE / 2 - EPS) {
         if (!self.hidden) {

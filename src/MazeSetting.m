@@ -21,7 +21,8 @@
 @synthesize borderWidth;
 @synthesize cornerRadius;
 @synthesize wallColor;
-@synthesize cheat;
+@synthesize throughWalls;
+@synthesize freeRotation;
 
 static BOOL hasInitialized = NO;
 static NSArray *appearanceKeys;
@@ -45,7 +46,8 @@ static NSArray *appearanceKeys;
         self.borderWidth = 0.5f;
         self.cornerRadius = 2.0f;
         self.wallColor = [NSColor whiteColor];
-        self.cheat = NSOffState;
+        self.throughWalls = NSOffState;
+        self.freeRotation = NSOffState;
     }
     return self;
 }

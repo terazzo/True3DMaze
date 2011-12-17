@@ -200,9 +200,6 @@ createGCColorWithNSColor(NSColor *color, CGFloat alpha)
         float dy = mouseUpPoint.y - mouseDownPoint.y;
         float rotateX = dx / viewSize.width;
         float rotateY = dy / viewSize.height;
-        // 90度単位で丸める
-        rotateX = floor(rotateX * 2 + 0.5f) / 2;
-        rotateY = floor(rotateY * 2 + 0.5f) / 2;
         
         [controller rotateViewPoint:M_PI * rotateX :M_PI * rotateY];
     } else {

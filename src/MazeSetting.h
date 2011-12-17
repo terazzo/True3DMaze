@@ -16,7 +16,8 @@
     CGFloat borderWidth;
     CGFloat cornerRadius;
     NSColor *wallColor;
-    int cheat;
+    int throughWalls;
+    int freeRotation;
     
 }
 @property int mazeSizeX;
@@ -26,7 +27,8 @@
 @property CGFloat borderWidth;
 @property CGFloat cornerRadius;
 @property(retain) NSColor *wallColor;
-@property int cheat;
+@property int throughWalls;
+@property int freeRotation;
 - (void)notifyAppearanceChanged;
 @end
 
