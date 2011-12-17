@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'True3DMaze' target in the 'True3DMaze' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
