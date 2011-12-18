@@ -108,7 +108,7 @@
     [self notifyViewPointChanged:viewPoint.transform];
 
     if ([maze isAtGoal:[viewPoint getPosition]]) {
-        NSRunAlertPanel(@"Clear", @"Congrats!!", @"Try the next.", nil, nil);
+        NSRunAlertPanel(@"Clear", @"Congrats!!", @"More", nil, nil);
         [self constructMaze];
     }
 }

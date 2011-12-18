@@ -83,9 +83,9 @@ selectDirection(unsigned around)
     }
     srand(time(NULL));
     
-    for (i = 1; i < sizeX; i += 2) {
-        for (j = 1; j < sizeY; j += 2) {
-            for (k = 1; k < sizeZ; k += 2) {
+    for (i = 0; i < sizeX; i += 2) {
+        for (j = 0; j < sizeY; j += 2) {
+            for (k = 0; k < sizeZ; k += 2) {
                 if (map[i][j][k] == PATH) {
                     continue; // 既に通路なら何もしない
                 }
@@ -116,8 +116,8 @@ selectDirection(unsigned around)
             }
         }
     }
-    start = makePosition(1, 1, 1);
-    goal = makePosition(2 * (int)(x / 2) - 1, 2 * (int)(y / 2) - 1, 2 * (int)(z / 2) - 1);        
+    start = makePosition(0, 0, 0);
+    goal = makePosition(2 * (int)((x - 1) / 2), 2 * (int)((y - 1) / 2), 2 * (int)((z - 1) / 2));        
 
     // 変更を通知する
     [[NSNotificationCenter defaultCenter]
@@ -146,15 +146,15 @@ selectDirection(unsigned around)
         return map[p.x][p.y][p.z] == PATH;
     }
     // X壁の場合、X方向の隣同士の値が異なる=壁有り
-    if (d == DIR_X &&  p.y > 0 &&  p.z > 0) {
+    if (d == DIR_X) {
         return map[p.x][p.y][p.z] != map[p.x - 1][p.y][p.z];
     }
     // Y壁の場合、Y方向の隣同士の値が異なる=壁有り
-    if (d == DIR_Y && p.x > 0 && p.z > 0) {
+    if (d == DIR_Y) {
         return map[p.x][p.y][p.z] != map[p.x][p.y - 1][p.z];
     }
     // Z壁の場合、Z方向の隣同士の値が異なる=壁有り
-    if (d == DIR_Z && p.x > 0 && p.y > 0) {
+    if (d == DIR_Z) {
         return map[p.x][p.y][p.z] != map[p.x][p.y][p.z - 1];
     }
     return NO;
@@ -166,15 +166,15 @@ selectDirection(unsigned around)
 - (BOOL)position:(MazePosition)p isAround:(MazePosition)target for:(WallDirection)d
 {
     // X壁の場合、
-    if (d == DIR_X &&  p.x > 0) {
+    if (d == DIR_X) {
         return (target.x == p.x || target.x == p.x - 1) && target.y == p.y && target.z == p.z;
     }
     // Y壁の場合
-    if (d == DIR_Y && p.y > 0) {
+    if (d == DIR_Y) {
         return target.x == p.x && (target.y == p.y || target.y == p.y - 1) && target.z == p.z;
     }
     // Z壁の場合
-    if (d == DIR_Z && p.z > 0) {
+    if (d == DIR_Z) {
         return target.x == p.x && target.y == p.y && (target.z == p.z || target.z == p.z - 1);
     }
     return NO;

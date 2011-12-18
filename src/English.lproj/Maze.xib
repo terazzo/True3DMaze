@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="10"/>
 			<integer value="3"/>
-			<integer value="179"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -161,7 +161,7 @@
 															<object class="NSLocale" id="784934857">
 																<string key="NS.identifier"/>
 															</object>
-															<real value="2"/>
+															<real value="1"/>
 															<string>-∞</string>
 															<string/>
 															<string>+∞</string>
@@ -185,7 +185,7 @@
 															</object>
 														</object>
 													</object>
-													<real value="2" key="NS.min"/>
+													<real value="1" key="NS.min"/>
 													<object class="NSDecimalNumberPlaceholder" key="NS.max" id="270285017">
 														<int key="NS.exponent">0</int>
 														<int key="NS.length">0</int>
@@ -270,7 +270,7 @@
 															<boolean value="YES"/>
 															<integer value="1040"/>
 															<reference ref="784934857"/>
-															<real value="2"/>
+															<real value="1"/>
 															<string>-∞</string>
 															<string/>
 															<string>+∞</string>
@@ -288,7 +288,7 @@
 														<string key="NSString">NaN</string>
 														<reference key="NSAttributes" ref="987817147"/>
 													</object>
-													<real value="2" key="NS.min"/>
+													<real value="1" key="NS.min"/>
 													<reference key="NS.max" ref="270285017"/>
 													<object class="NSDecimalNumberHandler" key="NS.rounding">
 														<int key="NS.roundingmode">3</int>
@@ -376,7 +376,7 @@
 															<string>¤¤</string>
 															<integer value="3"/>
 															<integer value="309"/>
-															<real value="2"/>
+															<real value="1"/>
 															<integer value="1"/>
 															<string>-</string>
 															<string>#,##0.###</string>
@@ -411,7 +411,7 @@
 														<string key="NSString">NaN</string>
 														<reference key="NSAttributes" ref="987817147"/>
 													</object>
-													<real value="2" key="NS.min"/>
+													<real value="1" key="NS.min"/>
 													<reference key="NS.max" ref="270285017"/>
 													<object class="NSDecimalNumberHandler" key="NS.rounding">
 														<int key="NS.roundingmode">3</int>
